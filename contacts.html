@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/contacts.css">
+    <link rel="stylesheet" href="styles/adaptation.css">
     <title>Document</title>
 </head>
 
@@ -22,6 +23,21 @@
                 <a href="sertificate.html" class="nav-item">СЕРТИФИКАТЫ</a>
                 <a href="contacts.html" class="nav-item">КОНТАКТЫ</a>
             </nav>
+        </div>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+
+            <ul class="menu__box">
+                <li><a href="index.html" class="menu__item"><img src="img/logo.svg" alt=""></a></li>
+                <li><a href="index.html" class="menu__item">ГЛАВНАЯ</a></li>
+                <li><a href="gallery.html" class="menu__item">ГАЛЕРЕЯ</a></li>
+                <li><a href="project.html" class="menu__item">ПРОЕКТЫ</a></li>
+                <li><a href="sertificate.html" class="menu__item">СЕРТИФИКАТЫ</a></li>
+                <li><a href="contacts.html" class="menu__item">КОНТАКТЫ</a></li>
+            </ul>
         </div>
     </header>
     <section class="contacts">
@@ -47,44 +63,39 @@
                 </div>
             </div>
     </section>
-    <div class="modal" data-modal='1'>
-        <div class="modal_header">
-            <h2 style="text-align: center;">Задать вопрос</h2>
-            <button class="modalClose">
-                <img src="img/modalClose.png" alt="">
-            </button>
+    <div class="popup__bg">
+        <div class="popup__wrapper">
+            <form class="popup">
+                <div class="popup__header">
+                    <h2 class="popup__title">Задать вопрос</h2>
+                    <div><img src="img/modalClose.png" alt="" class="close-popup"></div>
+                </div>
+                <input type="text" class="popup__input" placeholder="Имя">
+                <input type="tel" class="popup__input" placeholder="Номер телефона*" required>
+                <input type="email" class="popup__input" placeholder="E-mail*" required>
+                <input type="text" class="popup__input" placeholder="Интересующий товар/услуга">
+                <textarea cols="42" rows="5" class="message" placeholder="Сообщение*" required></textarea>
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="checkbox">
+                    <label for="checkbox">Отправляя заявку Вы соглашаетесь
+                        с политикой
+                        конфиденциальности</label>
+                </div>
+                <button class="popup__submit" type="button">Отправить</button>
+            </form>
         </div>
-        <form action="" class="modal_form">
-            <input type="text" class="modal_input" placeholder="Имя">
-            <input type="text" class="modal_input" placeholder="Номер телефона">
-            <input type="text" class="modal_input" placeholder="E-mail">
-            <input type="text" class="modal_input" placeholder="Интересующий товар/услуга">
-            <textarea name="" id="" cols="50" rows="5" placeholder="Сообщение*"></textarea>
-            <div class="checkbox">
-                <input type="checkbox" id="checkbox">
-                <label for="checkbox">Отправляя заявку Вы соглашаетесь
-                    с политикой
-                    конфиденциальности</label>
-            </div>
-            <button class="modal_btn">Отправить</button>
-        </form>
-    </div>
-    <div class="modal_message">
-        <div class="modalClose">
-            <img src="img/modalClose.png" alt="">
-        </div>
-        <div class="message_block">
+        <div class="popup__complete">
             <div><img src="img/success.png" alt=""></div>
-            <h2>Спасибо !</h2>
+            <h4>Спасибо !</h4>
             <p>Ваше сообщение отправлено мы свяжемся с вами в ближайшее время</p>
-            <button class="message_btn">ВЕРНУТСЯ НАЗАД</button>
+            <button type="button">ВЕРНУТСЯ НАЗАД</button>
         </div>
     </div>
     <footer class="footer">
         <div class="container">
             <div class="footer_inner">
                 <div class="footer_logo">
-                    <a href="#"><img src="img/footer_logo.png" alt=""></a>
+                    <a href="index.html"><img src="img/footer_logo.png" alt=""></a>
                 </div>
                 <div class="footer_info">
                     <h4 class='footer_info--title'>Информация</h4>

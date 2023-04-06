@@ -106,23 +106,51 @@ header {
   background: #333333;
 }
 .contacts_leftbox {
-  width: 1319px;
+  max-width: 1319px;
   height: 501px;
   margin-bottom: 120px;
 }
-
-.modal {
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
+  transition: 0.5s all;
+}
+.popup__bg.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s all;
+}
+.popup__wrapper {
   max-width: 469px;
   max-height: 590px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Центрируем и масштабируем в 0 само окно */
+  transition: 0.5s all;
   background-color: #ffffff;
 }
-.is-open {
-  pointer-events: all;
-  opacity: 1;
+.popup__wrapper.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
 }
-.modal h2 {
+.popup__header {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* text-align: center; */
+}
+.popup__title {
+  padding: 25px 0;
+  /* padding-right: 100px; */
+  text-align: center;
+
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
@@ -130,69 +158,82 @@ header {
 
   color: #333333;
 }
-.modal_form {
+.close-popup {
+  position: absolute;
+  padding-left: 100px;
+  margin-top: -10px;
+
+  cursor: pointer;
+}
+.popup {
+  padding: 0 39px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
   flex-basis: 391px;
+  align-items: center;
+  justify-content: center;
 }
-.modal_form textarea {
-  margin-bottom: 20px;
-  padding: 15px 21px;
-  resize: none;
-  outline: none;
-  background-color: #f3f3f3;
-}
-.modal_input {
-  margin-bottom: 10px;
-  padding: 15px 21px;
+.popup__input {
   width: 100%;
-  background-color: #f3f3f3;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  background: #f3f3f3;
+}
+.message {
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  resize: none;
+  background: #f3f3f3;
 }
 .checkbox {
-  display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
-.checkbox input {
-  margin-right: 10px;
-}
-.modal_btn {
+.popup__submit {
   width: 100%;
-  height: 42px;
+  max-height: 42px;
+  margin-bottom: 30px;
+  padding: 15px 0;
 
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-
-  background-color: #333333;
   color: #ffffff;
+
+  background: #333333;
 }
 
-.modal_message {
+.popup__complete {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  max-height: 516px;
+  max-width: 421px;
   opacity: 0;
   pointer-events: none;
-  max-width: 516px;
-  max-height: 421px;
-}
-.is-open {
-  pointer-events: all;
-  opacity: 1;
-}
-.message_block {
+  /* transition: 0.5s all; */
+
+  flex-basis: 391px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex-basis: 391px;
-}
-.modal_message img {
-  margin-bottom: 20px;
-}
-.modal_message h2 {
-  margin-bottom: 30px;
+  text-align: center;
 
+  background: #ffffff;
+}
+.popup__complete.active {
+  opacity: 1;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  /* transition: 0.5s all; */
+  transition: 0.5s all;
+}
+.popup__complete img {
+  padding-top: 50px;
+}
+.popup__complete h4 {
+  margin-top: 30px;
   font-weight: 700;
   font-size: 24px;
   line-height: 26px;
@@ -200,9 +241,9 @@ header {
 
   color: #333333;
 }
-.modal_message p {
-  margin-bottom: 40px;
-  text-align: center;
+.popup__complete p {
+  margin-top: 30px;
+  padding: 0 45px;
   font-weight: 600;
   font-size: 14px;
   line-height: 26px;
@@ -210,19 +251,23 @@ header {
 
   color: #4f4f4f;
 }
-.modal_message button {
-  width: 391px;
-  height: 42px;
+.popup__complete button {
+  margin: 25px 60px;
+  margin-top: 40px;
+  padding: 15px 0;
+  max-width: 321px;
+  max-height: 42px;
+
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 
-  background-color: #333333;
+  cursor: pointer;
+  background: #333333;
   color: #ffffff;
 }
-
 .footer {
   background: #2c2c2c;
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/adaptation.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -23,6 +24,21 @@
                 <a href="sertificate.html" class="nav-item">СЕРТИФИКАТЫ</a>
                 <a href="contacts.html" class="nav-item">КОНТАКТЫ</a>
             </nav>
+        </div>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+
+            <ul class="menu__box">
+                <li><a href="index.html" class="menu__item"><img src="img/logo.svg" alt=""></a></li>
+                <li><a href="index.html" class="menu__item">ГЛАВНАЯ</a></li>
+                <li><a href="gallery.html" class="menu__item">ГАЛЕРЕЯ</a></li>
+                <li><a href="project.html" class="menu__item">ПРОЕКТЫ</a></li>
+                <li><a href="sertificate.html" class="menu__item">СЕРТИФИКАТЫ</a></li>
+                <li><a href="contacts.html" class="menu__item">КОНТАКТЫ</a></li>
+            </ul>
         </div>
         <div class="container">
             <div class="header_content">
@@ -142,9 +158,11 @@
                         </span>
                     </li>
                 </ul>
-                <button class="project_btn">
-                    ВСЕ ПРОЕКТЫ <span class="arrow_right">&#8594;</span>
-                </button>
+                <div class="project--btn">
+                    <button class="project_btn">
+                        ВСЕ ПРОЕКТЫ <span class="arrow_right">&#8594;</span>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -177,7 +195,7 @@
         <div class="container">
             <div class="footer_inner">
                 <div class="footer_logo">
-                    <a href="#"><img src="img/footer_logo.png" alt=""></a>
+                    <a href="index.html"><img src="img/footer_logo.png" alt=""></a>
                 </div>
                 <div class="footer_info">
                     <h4 class='footer_info--title'>Информация</h4>
